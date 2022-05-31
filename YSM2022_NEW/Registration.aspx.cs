@@ -117,7 +117,7 @@ namespace YSM2022_NEW
                 smtp.EnableSsl = true;
                 smtp.UseDefaultCredentials = false;
                 smtp.Host = "smtp.gmail.com"; //Or Your SMTP Server Address
-                smtp.Credentials = new System.Net.NetworkCredential("sandeepinfotechv@gmail.com", "Sandeep@gmail");
+                smtp.Credentials = new System.Net.NetworkCredential("ysmproject2022@gmail.com", "adityA@2");
                 smtp.Send(mail);
                 lblErrorMsg.Text = "You are successfully registered. Please check your Inbox/spam folder for activation link.";
                 lblErrorMsg.ForeColor = System.Drawing.Color.Green;

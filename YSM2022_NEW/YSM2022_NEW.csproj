@@ -1795,6 +1795,7 @@
     <Content Include="admin\vendor\jquery\jquery.slim.min.js" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\style.css" />
+    <Content Include="Forgotpassword.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="img\about-1.jpg" />
     <Content Include="img\about-2.jpg" />
@@ -1855,6 +1856,13 @@
     </Compile>
     <Compile Include="admin\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forgotpassword.aspx.cs">
+      <DependentUpon>Forgotpassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forgotpassword.aspx.designer.cs">
+      <DependentUpon>Forgotpassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
