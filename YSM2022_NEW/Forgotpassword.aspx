@@ -1,6 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2_with_contact_page.Master" AutoEventWireup="true" CodeBehind="Forgotpassword.aspx.cs" Inherits="YSM2022_NEW.Forgotpassword" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ForgotPassword.aspx.cs" Inherits="YSM2022_NEW.ForgotPassword" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <asp:Label ID="lblerror" runat="server" Text=""></asp:Label> <br/>
+
+     <asp:Label ID="lblerror" runat="server" Text=""></asp:Label> <br/>
 
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -28,7 +29,7 @@
 .form-control{
     border-radius:1.5rem;
 }
-.btnSubmit
+.btn
 {
     border:none;
     border-radius:1.5rem;
@@ -37,42 +38,40 @@
     cursor: pointer;
     background: #0062cc;
     color: #fff;
+    
 }
 </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    	  
 
-  <div class="container register-form">
-            <div class="form">
-                <div class="note">
-                    <p>This is a simpleRegister Form made using Boostrap.</p>
-                </div>
+    <div class="container register-form">
+        <div class="form">
+            <div class="note">
+                <p>Forgot password</p>
+            </div>
 
-                <div class="form-content">
-                    <div class="row">
-                        <div class="col-md-12">
-                            
-                            <div class="form-group">
-                                 <asp:TextBox ID="email" runat="server" class="form-control" placeholder="Email *"  ></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*email address is required" ControlToValidate="email" ForeColor="#CC0000"></asp:RequiredFieldValidator>
-                            </div>
+            <div class="form-content">
+                <div class="row">
+                    <asp:label ID="lblErrorMsg" runat="server" text=""></asp:label>
+                    <div class="col-md-12">
+
+                        <div class="form-group">
+                            <asp:TextBox ID="email" runat="server" class="form-control" placeholder="Enter your email address" MaxLength="50"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Email Address is Required." ControlToValidate="email" ForeColor="#ff0000"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Please provide correct email format" ControlToValidate="email" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+
                         </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                 
-                               <asp:TextBox ID="password" runat="server" class="form-control" placeholder="Password *" Textmode="Password"  ></asp:TextBox>
-                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*enter your password" ControlToValidate="password" ForeColor="Red"></asp:RequiredFieldValidator>
-                            </div>
-                            </div>
-                             
-                        </div>
+
+
                     </div>
-                     
-      <asp:Button ID="Button1" runat="server" class="btnSubmit"  Text="Submit" OnClick="Button1_Click" />
-                        
-                   
+ 
+
                 </div>
             </div>
+
+            <asp:Button ID="forgotPwdBtn" runat="server" Text="Submit" class="btn btn-custom btn-lg" OnClick="forgotPwdBtn_Click" />
+
+
         </div>
+    </div>
 </asp:Content>

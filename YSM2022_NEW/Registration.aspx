@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2_with_contact_page.Master" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="YSM2022_NEW.Registration" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="YSM2022_NEW.Registration" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
 
@@ -54,7 +54,7 @@
   <div class="container register-form">
             <div class="form">
                 <div class="note">
-                    <p>This is a simpleRegister Form made using Boostrap.</p>
+                    <p>Register</p>
                 </div>
 
                 <div class="form-content">
@@ -63,21 +63,45 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <asp:TextBox ID="fname" runat="server" class="form-control" placeholder="First Name *"  ></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*first name is required" ControlToValidate="fname" ForeColor="Red"></asp:RequiredFieldValidator>
+
                                  
                             </div>
 
                             <div class="form-group">
                                 <asp:TextBox ID="lname" runat="server" class="form-control" placeholder="Last Name *"  ></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*last name is required" ControlToValidate="lname" ForeColor="Red"></asp:RequiredFieldValidator>
+
+                                 
+                            </div>
+
+                              <div class="form-group">
+                                <asp:TextBox ID="mobile" runat="server" class="form-control" placeholder="Enter your mobile number*" Maxlength="10" onkeydown = "return (!((event.keyCode>=65 && event.keyCode <= 95) || event.keyCode >= 106) && event.keyCode!=32);" ></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="*Mobile number is required" ControlToValidate="mobile" ForeColor="Red"></asp:RequiredFieldValidator>
+
                                  
                             </div>
                             <div class="form-group">
                                  <asp:TextBox ID="email" runat="server" class="form-control" placeholder="Email *"  ></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*email address is required" ControlToValidate="email" ForeColor="Red"></asp:RequiredFieldValidator>
+                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Please provide correct email format" ControlToValidate="email" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
 
                                <asp:TextBox ID="password" runat="server" class="form-control" placeholder="Password *" Textmode="Password"  ></asp:TextBox>
+                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*enter your password" ControlToValidate="password" ForeColor="#FF3300"></asp:RequiredFieldValidator>
+
+                            </div>
+
+                             <div class="form-group">
+
+                               <asp:TextBox ID="cpassword" runat="server" class="form-control" placeholder="Confirm Password *" Textmode="Password"  ></asp:TextBox>
+                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="*enter your password" ControlToValidate="password" ForeColor="#FF3300"></asp:RequiredFieldValidator>
+                                 <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Password and confirm password is not same." ControlToCompare="password" ControlToValidate="cpassword" ForeColor="Red"></asp:CompareValidator>
+
                             </div>
                              
                         </div>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2_with_contact_page.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="YSM2022_NEW.Login" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="YSM2022_NEW.Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <asp:Label ID="lblerror" runat="server" Text=""></asp:Label> <br/>
 
@@ -46,30 +46,49 @@
   <div class="container register-form">
             <div class="form">
                 <div class="note">
-                    <p>This is a simpleRegister Form made using Boostrap.</p>
+                    <p>Login</p>
                 </div>
 
                 <div class="form-content">
                     <div class="row">
                         <div class="col-md-12">
+
+                               <div class="form-group">
+                                 <asp:TextBox ID="fname" runat="server" class="form-control" placeholder="First Name *"  ></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*first name is required" ControlToValidate="fname" ForeColor="Red"></asp:RequiredFieldValidator>
+                            </div>
+
+                               <div class="form-group">
+                                 <asp:TextBox ID="lname" runat="server" class="form-control" placeholder="Last Name *"  ></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="*last name is required" ControlToValidate="lname" ForeColor="Red"></asp:RequiredFieldValidator>
+                            </div>
                             
                             <div class="form-group">
                                  <asp:TextBox ID="email" runat="server" class="form-control" placeholder="Email *"  ></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*email address is required" ControlToValidate="email" ForeColor="#CC0000"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*email address is required" ControlToValidate="email" ForeColor="Red"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                  
                                <asp:TextBox ID="password" runat="server" class="form-control" placeholder="Password *" Textmode="Password"  ></asp:TextBox>
-                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*enter your password" ControlToValidate="password" ForeColor="Red"></asp:RequiredFieldValidator>
+                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*enter your password" ControlToValidate="password" ForeColor="#FF3300"></asp:RequiredFieldValidator>
                             </div>
                             </div>
+
+                         <div class="col-md-12">
+                            
+                            <div class="form-group">
+                                 <asp:TextBox ID="cpassword" runat="server" class="form-control" placeholder="Confirm Password *" Textmode="Password" ></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*Password and Confirm password is not same" ControlToValidate="password" ForeColor="Red"></asp:RequiredFieldValidator>
+                            </div>
+                        </div>
                              
                         </div>
                     </div>
                      
-      <asp:Button ID="Button1" runat="server" class="btnSubmit"  Text="Submit" OnClick="Button1_Click" />
+      <asp:Button ID="Button1" runat="server" class="btnSubmit"  Text="Submit" OnClick="Button1_Click" />  
+              <a href="ForgotPassword.aspx" >ForgotPassword</a>
                         
                    
                 </div>

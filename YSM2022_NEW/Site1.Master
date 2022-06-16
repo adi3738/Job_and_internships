@@ -57,12 +57,14 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
                     <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
+                     
                      <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sign-in</a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a href="" class="dropdown-item">Login</a>
-                            <a href="" class="dropdown-item">Register</a>
+                            <a href="Login.aspx" class="dropdown-item">Login</a>
+                            <a href="Registration.aspx" class="dropdown-item">Register</a>
+                            <a href="Logout.aspx" class="dropdown-item">Logout</a>
+
                         </div>
                     </div>
                     <div class="nav-item dropdown">
